@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.1)
 
 
-set(PROJECT_NAME myhklib)
+set(PROJECT_NAME myhkdep)
 
 list(APPEND CMAKE_MODULE_PATH
         $ENV{HK_PILOT_DIR}/cmake
@@ -14,9 +14,6 @@ include(HKPackageBuilder)
 hkbuilder_prepare_project()
 hk_check_dependencies()
 
-find_package(myhkdep  REQUIRED)
-list( APPEND PUBLIC_EXT_LIBS myhkdep::myhkdep)
-
 include_directories(BEFORE
         ${PROJECT_SOURCE_DIR}/src/library
         )
@@ -25,5 +22,5 @@ add_subdirectory(src)
 
 pbuilder_component_install_and_export(
         COMPONENT Library
-        LIBTARGETS myhklib
+        LIBTARGETS myhkdep
 )

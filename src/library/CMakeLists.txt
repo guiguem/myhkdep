@@ -5,11 +5,11 @@
 set(PACKAGE_LIBS )
 
 set (HEADERS
-        HelloApp.h
+        App.h
         )
 
 set (SOURCES
-        HelloApp.cpp
+        App.cpp
         )
 
 # ###########
@@ -17,7 +17,7 @@ set (SOURCES
 # ###########
 
 pbuilder_library(
-        TARGET myhklib
+        TARGET myhkdep
         SOURCES ${SOURCES}
         PROJECT_LIBRARIES ${PACKAGE_LIBS}
         PUBLIC_EXTERNAL_LIBRARIES ${PUBLIC_EXT_LIBS}
